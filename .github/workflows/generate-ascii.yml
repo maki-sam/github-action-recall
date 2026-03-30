@@ -11,13 +11,13 @@ jobs:
               run: sudo apt-get install cowsay
 
             - name: Execute Cowsay Command
-              run: cowsay -f dragon "Ma Ma is the Best, .. DRAGONs" >> dragon.txt
+              run: cowsay "MaMa is the Best" >> mama.txt
 
             - name: Test File Exist
-              run: grep -i "dragon" dragon.txt
+              run: grep -i "mama" mama.txt
 
             - name: Read File
-              run: cat dragon.txt
+              run: cat mama.txt
 
             - name: Checkout Repo File
               run: ls -ltra
