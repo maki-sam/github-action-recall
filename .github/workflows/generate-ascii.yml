@@ -7,17 +7,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Install Cowsays
-              run: sudo apt-get install cowsay
-
-            - name: Execute Cowsay Command
-              run: cowsay "MaMa is the Best" >> mama.txt
-
-            - name: Test File Exist
-              run: grep -i "mama" mama.txt
-
-            - name: Read File
-              run: cat mama.txt
-
-            - name: Checkout Repo File
+            - name: List Repository Files Before Execution
               run: ls -ltra
+            - name: Execute ASCII Script For MaMa
+              run: |
+                chmod +x ascii.sh
+                ./ascii.sh
