@@ -10,15 +10,20 @@ jobs:
       - name: Execute ASCII Script
         run: cowsay "MaMa is the Best, MaMa ko Chit Tal" >> mama.txt
 
-      - name: Sleep for 10 seconds
-        run: sleep 10
+      - name: Upload File
+        uses: actions/upload-artifact@v3
+        with:
+          name: mama.txt upload
+          path: mama.txt
 
   test_job01:
     needs: build_job01
     runs-on: ubuntu-latest
     steps:
-      - name: Sleep for 10 seconds
-        run: sleep 10
+      - name: Donwload File
+        uses: actions/download-artifact@v8
+        with:
+          name: mama.txt download
 
       - name: Check File Exists
         run: grep -i "MaMa" mama.txt
@@ -27,6 +32,11 @@ jobs:
     needs: test_job01
     runs-on: ubuntu-latest
     steps:
+      - name: Donwload File
+        uses: actions/download-artifact@v8
+        with:
+          name: mama.txt download
+          
       - name: Read File
         run: cat mama.txt
 
