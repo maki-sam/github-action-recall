@@ -1,0 +1,23 @@
+name: Generate ASCII Art
+on: push
+jobs:
+    generate_ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install Cowsays
+              run: sudo apt-get install cowsay
+
+            - name: Execute Cowsay Command
+              run: cowsay -f dragon "Ma Ma is the Best" >> mama.txt
+
+            - name: Test File Exist
+              run: grep -i "mama.txt"
+
+            - name: Read File
+              run: cat mama.txt
+
+            - name: Checkout Repo File
+              run: ls -ltra
