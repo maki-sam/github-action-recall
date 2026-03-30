@@ -14,6 +14,7 @@ jobs:
         run: sleep 10
 
   test_job01:
+    needs: build_job01
     runs-on: ubuntu-latest
     steps:
       - name: Sleep for 10 seconds
@@ -23,6 +24,7 @@ jobs:
         run: grep -i "MaMa" mama.txt
 
   deploy_job01:
+    needs: test_job01
     runs-on: ubuntu-latest
     steps:
       - name: Read File
