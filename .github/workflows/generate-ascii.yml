@@ -14,7 +14,7 @@ jobs:
               run: cowsay -f dragon "Ma Ma is the Best" >> mama.txt
 
             - name: Test File Exist
-              run: grep -i "mama" mama.txt
+              run: grep -i "dragon" mama.txt
 
             - name: Read File
               run: cat mama.txt
