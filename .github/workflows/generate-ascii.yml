@@ -11,9 +11,9 @@ jobs:
         run: cowsay "MaMa is the Best, MaMa ko Chit Tal" >> mama.txt
 
       - name: Upload File
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: mama.txt upload
+          name: mama-txt
           path: mama.txt
 
   test_job01:
@@ -23,7 +23,7 @@ jobs:
       - name: Donwload File
         uses: actions/download-artifact@v8
         with:
-          name: mama.txt download
+          name: mama-txt
 
       - name: Check File Exists
         run: grep -i "MaMa" mama.txt
@@ -35,8 +35,8 @@ jobs:
       - name: Donwload File
         uses: actions/download-artifact@v8
         with:
-          name: mama.txt download
-          
+          name: mama-txt
+
       - name: Read File
         run: cat mama.txt
 
