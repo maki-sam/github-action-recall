@@ -15,6 +15,9 @@ jobs:
                 ls
                 cat README.md
 
+            - name: Generate ASCII Art
+              run: cowsay -f dragon "Ma Ma is the Best" >> mama.txt
+
             # - name: Welcome Message
             #   run: echo "My First GitHub Job"
 
