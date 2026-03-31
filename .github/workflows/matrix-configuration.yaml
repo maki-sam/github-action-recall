@@ -1,0 +1,23 @@
+name: Martix Configuration
+on:
+    push:
+    workflow_dispatch:
+
+jobs:
+    deploy_on_ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Docker Details
+              run: docker info
+            
+            - name: Run Docker Hello Container
+              run: docker run hello-world
+            
+    deploy_on_windows:
+        runs-on: windows-latest
+        steps:
+            - name: Echo Docker Details
+              run: docker info
+
+            - name: Run Docker Hello Container
+              run: docker run hello-world
