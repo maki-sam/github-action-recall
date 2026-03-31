@@ -8,7 +8,7 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, windows-latest]
-                image: [hello0-world:latest, alpine:latest]
+                image: [hello-world:latest, alpine:latest]
         runs-on: ${{ matrix.os }}
         steps:
             - name: Echo Docker Details
